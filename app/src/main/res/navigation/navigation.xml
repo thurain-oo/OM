@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/vouncherFragment">
+    <fragment
+        android:id="@+id/vouncherFragment"
+        android:name="com.example.om.vouncher.VouncherFragment"
+        android:label="Vouncher"
+        tools:layout="@layout/fragment_vouncher" >
+        <action
+            android:id="@+id/action_vouncherFragment_to_createNewVouncherFragment"
+            app:destination="@id/createNewVouncherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewVouncherFragment"
+        android:name="com.example.om.vouncher.CreateNewVouncherFragment"
+        android:label="New Vouncher"
+        tools:layout="@layout/fragment_create_new_vouncher" >
+        <action
+            android:id="@+id/action_createNewVouncherFragment_to_customDialogFragment"
+            app:destination="@id/customDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customDialogFragment"
+        android:name="com.example.om.vouncher.CustomDialogFragment"
+        android:label="Add item to list" >
+        <action
+            android:id="@+id/action_customDialogFragment_to_createNewVouncherFragment"
+            app:destination="@id/createNewVouncherFragment" />
+    </fragment>
+</navigation>

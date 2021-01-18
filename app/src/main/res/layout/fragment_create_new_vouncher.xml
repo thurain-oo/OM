@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data >
+        <variable
+            name="viewModel"
+            type="com.example.om.vouncher.VouncherItemViewmodel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".vouncher.CreateNewVouncherFragment">
+
+
+
+        <EditText
+            android:id="@+id/customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Customer Name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/customer_ph_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Phone No "
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/customer_name"
+            app:layout_constraintTop_toBottomOf="@+id/customer_name" />
+
+        <EditText
+            android:id="@+id/customer_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/customer_ph_no"
+            app:layout_constraintTop_toBottomOf="@+id/customer_ph_no" />
+
+        <TextView
+            android:id="@+id/serial_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Serial No."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:stretchColumns="2,3,4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/customer_address"
+            app:layout_constraintTop_toBottomOf="@id/customer_address">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="No "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="2"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="Item Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="3"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text=" Price"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="4"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text=" Quantity"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="5"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text=" Amount"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vouncher_item_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/vouncher_item"
+            app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_vouncher_item_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@android:drawable/ic_input_add"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="@+id/serial_no"
+            app:layout_constraintStart_toStartOf="@+id/serial_no" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Total Amount : 10,0000Ks"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="@+id/vouncher_item_recyclerview" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/vouncher_item_recyclerview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
